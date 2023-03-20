@@ -1,6 +1,8 @@
 from typing import Dict, List
 from datamodel import OrderDepth, TradingState, Order
 
+LIMITS = {"PEARLS": 20, "BANANAS": 20}
+
 class Trader:
 
     
@@ -13,7 +15,7 @@ class Trader:
             # Check if the current product is the 'PEARLS' product, only then run the order logic
             N=0
             if product == "PEARLS":
-            	N=30
+            	N=34
             elif product == "BANANAS":
                 N=5
             if N:
@@ -27,16 +29,20 @@ class Trader:
                 # Define a fair value for the PEARLS.
                 # We will calculate the simple moving average (SMA) of the last N prices
                 # and use that as the fair value
-                N = 10
                 prices = list(order_depth.buy_orders.keys()) + list(order_depth.sell_orders.keys())
-                if len(prices) < N:
-                    # If there are not enough prices to calculate the SMA, use a default value of 1
-                    acceptable_price = 1000000
-                else:
-                    sma = sum(prices[-N:]) / N
-                    acceptable_price = sma
+                acceptable_price = sum(prices) / len(prices)
+                # if len(prices) < N:
+                #     # If there are not enough prices to calculate the SMA, use a default value of 1
+                #     sma = sum(prices) / len(prices)
+                #     acceptable_price = sma
+                # else:
+                #     sma = sum(prices[-N:]) / N
+                #     acceptable_price = sma
 
                 # If statement checks if there are any SELL orders in the PEARLS market
+                
+                    
+                
                 if len(order_depth.sell_orders) > 0:
 
                     # Sort all the available sell orders by their price,
@@ -52,8 +58,8 @@ class Trader:
                         # The code below therefore sends a BUY order at the price level of the ask,
                         # with the same quantity
                         # We expect this order to trade with the sell order
-                        print("BUY", str(-best_ask_volume) + "x", best_ask)
-                        orders.append(Order(product, best_ask, -best_ask_volume))
+                print("BUY", str(-best_ask_volume) + "x", best_ask)
+                orders.append(Order(product, best_ask, -best_ask_volume))
 
                 # The below code block is similar to the one above,
                 # the difference is that it find the highest bid (buy order)
@@ -72,4 +78,5 @@ class Trader:
         # Return the dict of orders
         # These possibly contain buy or sell orders for PEARLS
         # Depending on the logic above
+        
         return result
