@@ -1,5 +1,5 @@
 from datamodel import Listing, OrderDepth, Trade, TradingState
-from cgptexbot import Trader
+from hybrid import Trader
 timestamp = 1000
 
 listings = {

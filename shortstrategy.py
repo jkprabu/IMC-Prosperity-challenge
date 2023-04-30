@@ -4,9 +4,6 @@ from datamodel import OrderDepth, TradingState, Order
 LIMITS = {"PEARLS": 20, "BANANAS": 20}
 
 class Trader:
-
-    
-
     def run(self, state: TradingState) -> Dict[str, List[Order]]:
         result = {}
 

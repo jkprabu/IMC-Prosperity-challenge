@@ -8,8 +8,6 @@ ENTRY_LIMITS = {"PEARLS": 10, "BANANAS": 10}
 
 class Trader:
 
-    
-
     def run(self, state: TradingState) -> Dict[str, List[Order]]:
         result = {}
 
