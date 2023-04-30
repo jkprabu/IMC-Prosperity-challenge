@@ -106,7 +106,6 @@ def short_strat(product, state):
 
 class Trader:
 
-
     def run(self, state: TradingState) -> Dict[str, List[Order]]:
         result = {}
 

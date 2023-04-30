@@ -4,6 +4,7 @@ import math
 
 LIMITS = {"PEARLS": 20, "BANANAS": 20, "COCONUTS": 600, "PINA_COLADAS": 300}
 
+
 def dpt(state, product):
     order_depth: OrderDepth = state.order_depths[product]
     cod = state.order_depths["COCONUTS"]
