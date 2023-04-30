@@ -3,6 +3,8 @@
 Repository containing the code from IMC Prosperity's challenge. \
 **Team's final rank:** 354 out of 7169. 
 
+<img width="1430" alt="Screenshot 2023-04-30 at 2 49 49 PM" src="https://user-images.githubusercontent.com/81633173/235371080-35d5d35e-72ba-441b-946f-ac9e37e21d72.png">
+
 ## Background:
 Prosperity is a global (simulated)trading competetion hosted by IMC, with the objective for the participating teams to leverage data analysis and quantitative trading to make the most money (seashells in this case).
 
