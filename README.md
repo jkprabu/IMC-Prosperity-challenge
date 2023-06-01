@@ -28,4 +28,4 @@ Changed the SMA and current price crossover, for MA crossover between 34 MA and 
 ## Contents:
 ``visualizer.py``: Visualizer for our startegy. \
 ``duo.py``: Updated trading algo. \
-``testing.py``: Test to check if the algorithm file runs before submittion. 
+``testing.py``: Test to check if the algorithm file runs before submission. 
